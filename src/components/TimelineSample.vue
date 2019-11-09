@@ -8,139 +8,57 @@
         <h3 class="timeline-header__subtitle">ENGINEER LIFE</h3>
       </div>
       <div class="timeline">
-        <event-sample
+        <event
           v-for="e in events"
           :key="e.id"
           :tlText="e.timeline"
           :href="e.href"
           :title="e.title"
           :desc="e.desc"
-        ></event-sample>
+        ></event>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { EventSample } from "./EventSample.vue";
+import Event from "./Event.vue";
 export default {
   name: "Timeline",
   components: {
-    EventSample
+    Event
   },
   data: function() {
     return {
       events: [
         {
           id: 1,
-          timeline: "Become Freelance",
+          timeline: "Graduation",
           href: require("../assets/kk.jpg"),
-          title: "2017-2019",
-          desc: `I got started in Engineer. I worked in a company.
-                 I have skilled Java HTML JavaScript. and minor Framework.`
+          title: "2017",
+          desc: `富山大学を卒業しました。専攻は教育心理でした。実験用のプログラムを作っていた経験からシステムエンジニアとして就職しました。`
         },
         {
           id: 2,
+          timeline: "As a Engineer in small Company",
+          href: require("../assets/u.jpg"),
+          title: "2017-2019",
+          desc: `I got started in Engineer. I worked in a company.
+                 I have skilled Java, HTML, JavaScript, SQLServer. and minor Framework.`
+        },
+        {
+          id: 3,
           timeline: "Become Freelance",
-          href: require("../assets/kk.jpg"),
+          href: require("../assets/r.jpg"),
           title: "2019",
           desc: `I got started Freelance. I worked`
         },
         {
-          id: 3,
+          id: 4,
           timeline: "NEW TIMELINE DESIGN",
           href: require("../assets/u.jpg"),
           title: "2019",
           desc: `I made this Web site`
-        },
-        {
-          id: 4,
-          timeline: "NEW TIMELINE DESIGN",
-          href: require("../assets/r.jpg"),
-          title: "1893",
-          desc: `First enrolled in a traditionalreligious school, he soon switched
-              to a modern school. In 1893, he entered a military highschool
-              where his mathematics teacher gave him the second name Kemal
-              (meaning perfection)in recognition of young Mustafa's superior
-              achievement.`
-        },
-        {
-          id: 5,
-          timeline: "NEW TIMELINE DESIGN",
-          href: require("../assets/y.jpg"),
-          title: "1905",
-          desc: `In 1905, Mustafa Kemal graduated from the War Academy in Istanbul
-              with the rank of Staff Captain. Posted in Damascus, he started
-              with several colleagues, a clandestinesociety called "Homeland and
-              Freedom" to fight against the Sultan'sdespotism`
-        },
-        {
-          id: 6,
-          timeline: "NEW TIMELINE DESIGN",
-          href: require("../assets/adventure-backpack-beach-214575.jpg"),
-          title: "1908",
-          desc: `In 1908 he helped the group of officers who toppled the Sultan.
-              Mustafa Kemal'scareer flourished as he won his heroism in the far
-              corners of the Ottoman Empire,including Albania and Tripoli. He
-              also briefly served as a staff officer in Salonica andIstanbul and
-              as a military attache in Sofia.`
-        },
-        {
-          id: 7,
-          timeline: "NEW TIMELINE DESIGN",
-          href: require("../assets/azadeh-oveisi-1439715-unsplash.jpg"),
-          title: "1915",
-          desc: `In 1915, when Dardanelles campaign was launched, Colonel Mustafa
-              Kemal became anational hero by winning successive victories and
-              finally repelling the invaders.`
-        },
-        {
-          id: 8,
-          timeline: "NEW TIMELINE DESIGN",
-          href: require("../assets/ui.jpg"),
-          title: "1916",
-          desc: `Promotedto general in 1916, at age 35, he liberated two major
-              provinces in eastern Turkey thatyear. In the next two years, he
-              served as commander of several Ottoman armies inPalestine, Aleppo,
-              and elsewhere, achieving another major victory by stopping the
-              enemyadvance at Aleppo.`
-        },
-        {
-          id: 9,
-          timeline: "NEW TIMELINE DESIGN",
-          href: require("../assets/uy.jpg"),
-          title: "1919",
-          desc: `On May 19, 1919, Mustafa Kemal Pasha landed in the Black Sea port
-              of Samsun to startthe War of Independence. In defiance of the
-              Sultan's government, he rallied a liberationarmy in Anatolia and
-              convened the Congress of Erzurum and Sivas which established
-              thebasis for the new national effort under his leadership.`
-        },
-        {
-          id: 10,
-          timeline: "NEW TIMELINE DESIGN",
-          href: require("../assets/ju.jpg"),
-          title: "1920",
-          desc: `On April 23, 1920, the GrandNational Assembly was inaugurated.
-              Mustafa Kemal Pasha was elected to its Presidency. Fighting on
-              many fronts, he led his forces to victory against rebels and
-              invadingarmies. Following the Turkish triumph at the two major
-              battles at Inonu in Western Turkey,the Grand National Assembly
-              conferred on Mustafa Kemal Pasha the title ofCommander-in-Chief
-              with the rank of Marshal.`
-        },
-        {
-          id: 11,
-          timeline: "NEW TIMELINE DESIGN",
-          href: require("../assets/kk.jpg"),
-          title: "1923",
-          desc: `On April 23, 1920, the GrandNational Assembly was inaugurated.
-              Mustafa Kemal Pasha was elected to its Presidency. Fighting on
-              many fronts, he led his forces to victory against rebels and
-              invadingarmies. Following the Turkish triumph at the two major
-              battles at Inonu in Western Turkey,the Grand National Assembly
-              conferred on Mustafa Kemal Pasha the title ofCommander-in-Chief
-              with the rank of Marshal.`
         }
       ],
       elements: {
@@ -311,79 +229,6 @@ export default {
     left: 40px;
   }
 }
-.timeline-item {
-  padding: 40px 0;
-  opacity: 0.3;
-  filter: blur(2px);
-  transition: 0.5s;
-  box-sizing: border-box;
-  width: calc(50% - 40px);
-  display: flex;
-  position: relative;
-  transform: translateY(-80px);
-}
-.timeline-item:before {
-  content: attr(data-text);
-  letter-spacing: 3px;
-  width: 100%;
-  position: absolute;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 13px;
-  font-family: "Pathway Gothic One", sans-serif;
-  border-left: 2px solid rgba(255, 255, 255, 0.5);
-  top: 70%;
-  margin-top: -5px;
-  padding-left: 15px;
-  opacity: 0;
-  right: calc(-100% - 56px);
-}
-.timeline-item:nth-child(even) {
-  align-self: flex-end;
-}
-.timeline-item:nth-child(even):before {
-  right: auto;
-  text-align: right;
-  left: calc(-100% - 56px);
-  padding-left: 0;
-  border-left: none;
-  border-right: 2px solid rgba(255, 255, 255, 0.5);
-  padding-right: 15px;
-}
-.timeline-item--active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: blur(0px);
-}
-.timeline-item--active:before {
-  top: 50%;
-  transition: 0.3s all 0.2s;
-  opacity: 1;
-}
-.timeline-item--active .timeline__content-title {
-  margin: -50px 0 20px 0;
-}
-@media only screen and (max-width: 767px) {
-  .timeline-item {
-    align-self: baseline !important;
-    width: 100%;
-    padding: 0 30px 150px 80px;
-  }
-  .timeline-item:before {
-    left: 10px !important;
-    padding: 0 !important;
-    top: 50px;
-    text-align: center !important;
-    width: 60px;
-    border: none !important;
-  }
-  .timeline-item:last-child {
-    padding-bottom: 40px;
-  }
-}
-.timeline__img {
-  max-width: 100%;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
-}
 .timeline-container {
   width: 100%;
   position: relative;
@@ -421,14 +266,5 @@ export default {
   letter-spacing: 5px;
   margin: 10px 0 0 0;
   font-weight: normal;
-}
-.demo-footer {
-  padding: 60px 0;
-  text-align: center;
-}
-.demo-footer a {
-  color: #999;
-  display: inline-block;
-  font-family: Cardo;
 }
 </style>

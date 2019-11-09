@@ -2,19 +2,11 @@
   <v-app>
     <app-header />
     <v-content>
-      <hero href="https://source.unsplash.com/random/1200x1200" />
+      <hero :href="heroImg" />
       <!-- navbar TODO -->
-    </v-content>
-    <v-content>
       <About />
-    </v-content>
-    <v-content>
       <Timeline />
-    </v-content>
-    <v-content>
-      <skill />
-    </v-content>
-    <v-content>
+      <skills />
       <contact-form />
     </v-content>
     <app-footer />
@@ -27,7 +19,7 @@ import AppFooter from "@/components/common/Footer";
 import Hero from "@/components/layout/Hero";
 import About from "@/components/layout/About";
 import Timeline from "@/components/Timeline";
-import Skill from "@/components/layout/Skill";
+import Skills from "@/components/layout/Skills";
 import ContactForm from "@/components/layout/ContactForm";
 
 export default {
@@ -38,11 +30,13 @@ export default {
     Hero,
     About,
     Timeline,
-    Skill,
+    Skills,
     ContactForm
   },
-  data: () => ({
-    //
-  })
+  data: () => {
+    return {
+      heroImg: require("../assets/hero.jpg")
+    };
+  }
 };
 </script>

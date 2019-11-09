@@ -34,31 +34,30 @@ export default {
         {
           id: 1,
           timeline: "Graduation",
-          href: require("../assets/kk.jpg"),
+          href: require("../assets/timeline/graduation.png"),
           title: "2017",
-          desc: `富山大学を卒業しました。専攻は教育心理でした。実験用のプログラムを作っていた経験からシステムエンジニアとして就職しました。`
-        },
-        {
-          id: 1,
-          timeline: "As a Engineer in small Company",
-          href: require("../assets/u.jpg"),
-          title: "2017-2019",
-          desc: `I got started in Engineer. I worked in a company.
-                 I have skilled Java, HTML, JavaScript, SQLServer. and minor Framework.`
+          desc: `I graduated from Toyama university and my major was educational psychology. I became an engineer from the experience of creating an experimental program when writing my graduation thesis.`
         },
         {
           id: 2,
-          timeline: "Become Freelance",
-          href: require("../assets/r.jpg"),
-          title: "2019",
-          desc: `I got started Freelance. I worked`
+          timeline: "As an engineer in small Company",
+          href: require("../assets/timeline/engineer.png"),
+          title: "2017-2019",
+          desc: `I got started in System Engineer. I worked in a  small company in which I was engaged in the development of a travel company's core system. I have skilled Java, HTML, JavaScript, SQLServer. and minor Framework.`
         },
         {
           id: 3,
-          timeline: "NEW TIMELINE DESIGN",
-          href: require("../assets/u.jpg"),
-          title: "2019",
-          desc: `I made this Web site`
+          timeline: "Become Freelance",
+          href: require("../assets/timeline/freelance.png"),
+          title: "2019 Oct",
+          desc: `I got started Freelance. I worked in the development of clinical laboratory systems.`
+        },
+        {
+          id: 4,
+          timeline: "Make Portfolio",
+          href: require("../assets/timeline/my-portfolio.png"),
+          title: "2019 Nov",
+          desc: `I made this Web site which was created with Vue and Vuetify. `
         }
       ],
       elements: {
@@ -131,13 +130,13 @@ export default {
           el.classList.remove(this.elements.activeClass);
 
           // 背景を最後の要素の画像に変更する
-          this.changeBackgroundImg(timelineElements - 1);
+          //this.changeBackgroundImg(timelineElements - 1);
 
           // 最後の要素にactiveClassを追加
           this.addActiveClass(timelineElements - 1);
         } else if (min <= position && position <= max - 40) {
           // 上記の特殊なケースに当てはまらない場合のスクロールの処理
-          this.changeBackgroundImg(index);
+          //this.changeBackgroundImg(index);
           this.removeActiveClass();
           this.addActiveClass(index);
         }
@@ -178,7 +177,7 @@ export default {
     this.addActiveClass(0);
 
     // 背景をタイムラインにある要素の一番目をあらかじめbackgroundに設定する
-    this.changeBackgroundImg(0);
+    //this.changeBackgroundImg(0);
   }
 };
 </script>
@@ -203,7 +202,6 @@ export default {
   transition: 0.4s;
   padding: 0 10px;
   box-sizing: border-box;
-  font-family: "Oswald", sans-serif;
   color: #fff;
 }
 .timeline__content-desc {
@@ -230,21 +228,11 @@ export default {
   }
 }
 .timeline-container {
-  width: 100%;
-  position: relative;
-  padding: 80px 0;
+  font-size: 15px;
+  font-weight: normal;
   transition: 0.3s ease 0s;
-  background-attachment: fixed;
-  background-size: cover;
-}
-.timeline-container:before {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  content: "";
+  padding: 80px 0;
+  background: rgba(0, 0, 0, 0.4);
 }
 .timeline-header {
   width: 100%;
@@ -255,13 +243,11 @@ export default {
 .timeline-header__title {
   color: #fff;
   font-size: 58px;
-  font-family: "Oswald", sans-serif;
   font-weight: normal;
   margin: 0;
 }
 .timeline-header__subtitle {
   color: rgba(255, 255, 255, 0.5);
-  font-family: "Pathway Gothic One", sans-serif;
   font-size: 16px;
   letter-spacing: 5px;
   margin: 10px 0 0 0;
