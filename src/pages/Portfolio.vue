@@ -1,14 +1,14 @@
 <template>
   <v-app>
     <app-header />
-    <v-content>
+    <v-main>
       <hero :href="heroImg" />
       <!-- navbar TODO -->
       <About />
       <Timeline />
       <skills />
       <contact-form />
-    </v-content>
+    </v-main>
     <app-footer />
   </v-app>
 </template>
