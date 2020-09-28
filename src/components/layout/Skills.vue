@@ -124,28 +124,10 @@ export default {
           img: require("@/assets/skill/javascript.svg")
         },
         {
-          id: 3,
-          language: "Python",
-          star: 3.5,
-          img: require("@/assets/skill/python.svg")
-        },
-        {
           id: 4,
           language: "PHP",
           star: 2.5,
           img: require("@/assets/skill/php.svg")
-        },
-        {
-          id: 5,
-          language: "Ruby",
-          star: 2,
-          img: require("@/assets/skill/ruby.svg")
-        },
-        {
-          id: 6,
-          language: "C++",
-          star: 1.5,
-          img: require("@/assets/skill/c-plus.svg")
         }
       ],
       frontendSkills: [
@@ -180,14 +162,8 @@ export default {
           img: require("@/assets/skill/vuetify.svg")
         },
         {
-          id: 6,
-          language: "BootstrapVue",
-          star: 3,
-          img: require("@/assets/skill/bootstrap-vue.png")
-        },
-        {
           id: 7,
-          language: "SCSS",
+          language: "SASS",
           star: 2.5,
           img: require("@/assets/skill/sass.svg")
         }
@@ -244,24 +220,6 @@ export default {
           language: "MySQL",
           star: 3,
           img: require("../../assets/skill/mysql.svg")
-        },
-        {
-          id: 3,
-          language: "Oracle",
-          star: 3,
-          img: require("../../assets/skill/oracle.svg")
-        },
-        {
-          id: 4,
-          language: "MongoDB",
-          star: 2.5,
-          img: require("../../assets/skill/mongodb.svg")
-        },
-        {
-          id: 5,
-          language: "PostgreSQL",
-          star: 2,
-          img: require("../../assets/skill/postgresql.svg")
         }
       ],
       otherSkills: [

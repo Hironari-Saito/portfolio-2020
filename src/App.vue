@@ -13,3 +13,4 @@ export default {
   })
 };
 </script>
+<style src="./assets/scss/style.scss" lang="scss"></style>

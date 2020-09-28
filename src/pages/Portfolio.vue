@@ -1,10 +1,9 @@
 <template>
   <v-app>
-    <app-header />
+    <!-- <app-header /> -->
     <v-main>
-      <hero :href="heroImg" />
-      <!-- navbar TODO -->
-      <About />
+      <hero :logo="heroImg" />
+      <Message />
       <Timeline />
       <skills />
       <contact-form />
@@ -14,10 +13,10 @@
 </template>
 
 <script>
-import AppHeader from "@/components/common/Header";
+// import AppHeader from "@/components/common/Header";
 import AppFooter from "@/components/common/Footer";
 import Hero from "@/components/layout/Hero";
-import About from "@/components/layout/About";
+import Message from "@/components/layout/Message";
 import Timeline from "@/components/Timeline";
 import Skills from "@/components/layout/Skills";
 import ContactForm from "@/components/layout/ContactForm";
@@ -25,18 +24,19 @@ import ContactForm from "@/components/layout/ContactForm";
 export default {
   name: "App",
   components: {
-    AppHeader,
+    // AppHeader,
     AppFooter,
     Hero,
-    About,
+    Message,
     Timeline,
     Skills,
     ContactForm
   },
   data: () => {
     return {
-      heroImg: require("../assets/hero.jpg")
+      heroImg: require("../assets/images/hero/logo.png")
     };
   }
 };
 </script>
+<style scoped lang="scss"></style>
