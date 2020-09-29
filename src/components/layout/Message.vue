@@ -5,6 +5,7 @@
         <h2 class="text-center display-3 mb-5">Message</h2>
         <v-row>
           <v-col
+            cols="12"
             sm="12"
             md="6"
             lg="6"
@@ -19,6 +20,7 @@
             ></v-img>
           </v-col>
           <v-col
+            cols="12"
             sm="12"
             md="6"
             lg="6"
@@ -45,8 +47,9 @@
               このサイトも１から作成しております。
             </p>
             <p>
-              人生というのは出逢いの連続であります。
-              「なんかいい感じのエモい一言が欲しい」
+              人生というのは出逢いの連続です。
+              一つ一つの出逢いを大切にするという信念で、
+              末長くお付き合いができれば幸いです。
             </p>
           </v-col>
         </v-row>
@@ -115,7 +118,7 @@ export default {
 .section-message {
   &__item {
     opacity: 0;
-    transform: translate3d(0, 2rem, 0);
+    transform: translate3d(0, 32px, 0);
     transition-timing-function: ease-in;
   }
   &__item--active {

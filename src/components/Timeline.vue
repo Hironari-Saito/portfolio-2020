@@ -188,7 +188,7 @@ export default {
     font-size: 15px;
     font-weight: normal;
     transition: 0.3s ease 0s;
-    padding: 80px 0;
+    padding: 40px 0 80px;
     background: rgba(0, 0, 0, 0.4);
     background-repeat: no-repeat;
     background-position: 50% 50%;

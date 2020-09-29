@@ -94,7 +94,7 @@ export default {
     width: 20vw;
   }
   h1 {
-    font-size: 2.4rem;
+    font-size: 36px;
     margin-bottom: 100px;
   }
 }

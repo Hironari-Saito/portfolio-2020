@@ -27,46 +27,46 @@ export default {
     color: rgba(255, 255, 255, 1);
     font-family: "Roboto", sans-serif;
     font-weight: normal;
-    font-size: 4rem;
+    font-size: 64px;
     transition: 0.4s;
-    padding: 0 1rem;
+    padding: 0 16px;
   }
 
   &__content-desc {
     box-sizing: border-box;
     color: rgba(255, 255, 255, 0.8);
-    font-size: 1rem;
+    font-size: 16px;
     font-family: "Roboto Condensed", sans-serif;
     font-weight: normal;
-    line-height: 1.5rem;
+    line-height: 1.5;
     margin: 0;
   }
 }
 .timeline-item {
-  padding: 3rem 0;
+  padding: 48px 0;
   opacity: 0.3;
-  filter: blur(0.3rem);
+  filter: blur(5);
   transition: 0.4s;
   box-sizing: border-box;
-  width: calc(50% - 3rem);
+  width: calc(50% - 48px);
   display: flex;
   position: relative;
-  transform: translateY(-4rem);
+  transform: translateY(-64px);
 
   &::before {
     content: attr(data-text);
-    letter-spacing: 0.2rem;
+    letter-spacing: 3.2px;
     width: 100%;
     position: absolute;
     color: rgba(255, 255, 255, 0.5);
-    font-size: 0.9rem;
+    font-size: 14px;
     font-family: "Pathway Gothic One", sans-serif;
-    border-left: 0.2rem solid rgba(255, 255, 255, 0.5);
+    border-left: 3.2px solid rgba(255, 255, 255, 0.5);
     top: 70%;
-    margin-top: -1rem;
-    padding-left: 1rem;
+    margin-top: -16px;
+    padding-left: 16px;
     opacity: 0;
-    right: calc(-100% - 3.5rem);
+    right: calc(-100% - 56px);
   }
 
   &:nth-child(even) {
@@ -76,16 +76,16 @@ export default {
   &:nth-child(even):before {
     right: auto;
     text-align: right;
-    left: calc(-100% - 3.5rem);
+    left: calc(-100% - 56px);
     padding-left: 0;
     border-left: none;
-    border-right: 0.2rem solid rgba(255, 255, 255, 0.5);
-    padding-right: 1rem;
+    border-right: 3.2px solid rgba(255, 255, 255, 0.5);
+    padding-right: 16px;
   }
   &--active {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0rem);
+    filter: blur(0);
   }
   &--active:before {
     top: 50%;
@@ -93,7 +93,7 @@ export default {
     opacity: 1;
   }
   &--active &__content-title {
-    margin: -3rem 0 1rem 0;
+    margin: -48px 0 16px 0;
   }
 }
 
@@ -101,22 +101,22 @@ export default {
   .timeline-item {
     align-self: baseline;
     width: 100%;
-    padding: 0 2rem 12rem 5rem;
+    padding: 0 16px 200px 80px;
   }
   .timeline-item:before {
-    left: 1rem;
+    left: 16px;
     padding: 0;
-    top: 3rem;
+    top: 48px;
     text-align: center;
-    width: 5rem;
+    width: 80px;
     border: none;
   }
   .timeline-item:last-child {
-    padding-bottom: 4rem;
+    padding-bottom: 64px;
   }
 }
 .timeline__img {
   max-width: 100%;
-  box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 11px 16px rgba(0, 0, 0, 0.2);
 }
 </style>
