@@ -2,7 +2,10 @@
   <div id="app">
     <v-app id="inspire">
       <v-container>
-        <h2 class="text-center display-3 mb-5">Contact Me</h2>
+        <h2 class="text-center display-3 mb-5">Contact</h2>
+        <p class="mb-10 text-center">
+          お仕事の相談についてはここで
+        </p>
       </v-container>
       <v-form ref="form" v-model="valid">
         <v-container>

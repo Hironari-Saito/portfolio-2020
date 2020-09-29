@@ -1,243 +1,258 @@
 <template>
   <v-app class="grey lighten-4">
-    <div id="skill">
-      <v-container>
-        <h2 class="text-center display-3 mb-5">My Skill</h2>
-        <h3 class="mb-5">Programming Language</h3>
-        <v-row>
-          <v-col sm="4" md="3" lg="3" v-for="lang in languages" :key="lang.id">
-            <skill
-              :language="lang.language"
-              :star="lang.star"
-              :img="lang.img"
-            />
-          </v-col>
-        </v-row>
-        <h3 class="mb-5">Front End</h3>
-        <v-row>
+    <section id="skill" class="pt-10">
+      <v-container class="px-6">
+        <h2 class="text-center display-3 mb-5">MY SKILL</h2>
+        <p class="mb-10 text-center">
+          フロントエンドからバックエンド、インフラまで幅広い知識を有しております。
+          ITを俯瞰的な視野で概観できると共に、その詳細・実装までしっかりとサポート致します。
+          今後は、さらにそれぞれの専門性を高めると共に、近年さらに重要度を増しているセキュリティへの知見を深めていきたいと考えております。
+          最近、デジタルハリウッド大学のWebデザイナー専攻コースに入学し、デザイナーとエンジニアの垣根を取り払う努力をしております。
+        </p>
+        <v-row justify="center">
           <v-col
-            sm="4"
-            md="3"
-            lg="3"
-            v-for="skill in frontendSkills"
-            :key="skill.id"
+            cols="12"
+            sm="12"
+            md="6"
+            lg="4"
+            class="section-message__item"
+            data-delay="0.3"
           >
-            <skill
-              :language="skill.language"
-              :star="skill.star"
-              :img="skill.img"
-            />
+            <chart
+              :chartdata="frontend.chartdata"
+              :options="frontend.options"
+            ></chart>
           </v-col>
-        </v-row>
-        <h3 class="mb-5">Back End</h3>
-        <v-row>
           <v-col
-            sm="4"
-            md="3"
-            lg="3"
-            v-for="skill in backendSkills"
-            :key="skill.id"
+            cols="12"
+            sm="12"
+            md="6"
+            lg="4"
+            class="section-message__item"
+            data-delay="0.3"
           >
-            <skill
-              :language="skill.language"
-              :star="skill.star"
-              :img="skill.img"
-            />
+            <chart
+              :chartdata="backend.chartdata"
+              :options="backend.options"
+            ></chart>
           </v-col>
-        </v-row>
-        <h3 class="mb-5">Infrastructure</h3>
-        <v-row justify="start">
           <v-col
-            sm="4"
-            md="3"
-            lg="3"
-            v-for="skill in infraSkills"
-            :key="skill.id"
+            cols="12"
+            sm="12"
+            md="6"
+            lg="4"
+            class="section-message__item"
+            data-delay="0.3"
           >
-            <skill
-              :language="skill.language"
-              :star="skill.star"
-              :img="skill.img"
-            />
-          </v-col>
-        </v-row>
-        <h3 class="mb-5">Database</h3>
-        <v-row>
-          <v-col
-            sm="4"
-            md="3"
-            lg="3"
-            v-for="skill in databaseSkills"
-            :key="skill.id"
-          >
-            <skill
-              :language="skill.language"
-              :star="skill.star"
-              :img="skill.img"
-            />
-          </v-col>
-        </v-row>
-        <h3 class="mb-5">Other</h3>
-        <v-row>
-          <v-col
-            sm="4"
-            md="3"
-            lg="3"
-            v-for="skill in otherSkills"
-            :key="skill.id"
-          >
-            <skill
-              :language="skill.language"
-              :star="skill.star"
-              :img="skill.img"
-            />
+            <chart
+              :chartdata="infra.chartdata"
+              :options="infra.options"
+            ></chart>
           </v-col>
         </v-row>
       </v-container>
-    </div>
+    </section>
+    <section id="certificated" class="pt-10 pb-8">
+      <v-container class="px-6">
+        <h2 class="text-center display-3 mb-5">Certificated</h2>
+        <p class="mb-10 text-center">
+          私が保持している資格を記載しております。
+          幅広く、かつ専門性を高く保つために日々研鑚しております。
+        </p>
+        <v-list class="pl-0" tag="ol" two-line>
+          <v-list-item tag="li">
+            <v-list-item-content>
+              <v-list-item-title
+                >Linux Professional Institute Certification level
+                2</v-list-item-title
+              >
+              <v-list-item-subtitle>2020/8</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+
+          <v-list-item tag="li">
+            <v-list-item-content>
+              <v-list-item-title
+                >HTML5 Professional Certification Level 2</v-list-item-title
+              >
+              <v-list-item-subtitle>2020/2</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+
+          <v-list-item tag="li">
+            <v-list-item-content>
+              <v-list-item-title
+                >Cisco Certified Network Professional Routing &amp;
+                Switchings</v-list-item-title
+              >
+              <v-list-item-subtitle>2018/12</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+
+          <v-list-item tag="li">
+            <v-list-item-content>
+              <v-list-item-title>Java SE 8 Programmer Gold</v-list-item-title>
+              <v-list-item-subtitle>2017/8</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+
+          <v-list-item tag="li">
+            <v-list-item-content>
+              <v-list-item-title>応用情報技術者試験</v-list-item-title>
+              <v-list-item-subtitle>2014/11</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </v-container>
+    </section>
   </v-app>
 </template>
 
 <script>
-import Skill from "../Skill";
+import Chart from "../Chart.js";
+
 export default {
-  name: "Skills",
   components: {
-    Skill
-  },
-  props: {
-    href: String
+    Chart
   },
   data() {
     return {
-      languages: [
-        {
-          id: 1,
-          language: "Java",
-          star: 4,
-          img: require("@/assets/skill/java.svg")
+      datacollection: null,
+      frontend: {
+        chartdata: {
+          labels: [
+            "HTML/CSS",
+            "JavaScript",
+            "WordPress",
+            "AI/Ps",
+            "SCSS",
+            "Vue"
+          ],
+          datasets: [
+            {
+              label: "front-end",
+              data: [4.5, 4, 4, 3, 3.5, 4],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(255, 99, 132, 0.2)"
+              ],
+              borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)"
+              ],
+              borderWidth: 1
+            }
+          ]
         },
-        {
-          id: 2,
-          language: "JavaScript",
-          star: 3.5,
-          img: require("@/assets/skill/javascript.svg")
-        },
-        {
-          id: 4,
-          language: "PHP",
-          star: 2.5,
-          img: require("@/assets/skill/php.svg")
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scale: {
+            ticks: {
+              suggestedMax: 5,
+              suggestedMin: 0,
+              stepSize: 1
+            }
+          }
         }
-      ],
-      frontendSkills: [
-        {
-          id: 1,
-          language: "HTML",
-          star: 3.5,
-          img: require("@/assets/skill/html5.svg")
+      },
+      backend: {
+        chartdata: {
+          labels: ["Java", "PHP", "Nuxt", "Python", "Django", "Sring"],
+          datasets: [
+            {
+              label: "back-end",
+              data: [4.5, 4, 4, 3, 3, 3.5],
+              backgroundColor: [
+                "rgba(99, 255, 132, 0.2)",
+                "rgba(99, 255, 132, 0.2)",
+                "rgba(99, 255, 132, 0.2)",
+                "rgba(99, 255, 132, 0.2)",
+                "rgba(99, 255, 132, 0.2)",
+                "rgba(99, 255, 132, 0.2)"
+              ],
+              borderColor: [
+                "rgba(99, 255, 132, 1)",
+                "rgba(99, 255, 132, 1)",
+                "rgba(99, 255, 132, 1)",
+                "rgba(99, 255, 132, 1)",
+                "rgba(99, 255, 132, 1)",
+                "rgba(99, 255, 132, 1)"
+              ],
+              borderWidth: 1
+            }
+          ]
         },
-        {
-          id: 2,
-          language: "CSS",
-          star: 3.5,
-          img: require("@/assets/skill/css3.svg")
-        },
-        {
-          id: 3,
-          language: "Vue",
-          star: 3,
-          img: require("@/assets/skill/vue.svg")
-        },
-        {
-          id: 4,
-          language: "Bootstrap",
-          star: 3,
-          img: require("@/assets/skill/bootstrap.svg")
-        },
-        {
-          id: 5,
-          language: "Vuetify",
-          star: 3,
-          img: require("@/assets/skill/vuetify.svg")
-        },
-        {
-          id: 7,
-          language: "SASS",
-          star: 2.5,
-          img: require("@/assets/skill/sass.svg")
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scale: {
+            ticks: {
+              suggestedMax: 5,
+              suggestedMin: 0,
+              stepSize: 1
+            }
+          }
         }
-      ],
-      backendSkills: [
-        {
-          id: 1,
-          language: "Spring",
-          star: 3,
-          img: require("../../assets/skill/spring.svg")
+      },
+      infra: {
+        chartdata: {
+          labels: [
+            "AWS",
+            "CircleCI",
+            "Git/GitHub",
+            "Netlify",
+            "Linux",
+            "Network"
+          ],
+          datasets: [
+            {
+              label: "Infra",
+              data: [3.5, 3, 4, 3, 3.5, 3],
+              backgroundColor: [
+                "rgba(132, 99, 255, 0.2)",
+                "rgba(132, 99, 255, 0.2)",
+                "rgba(132, 99, 255, 0.2)",
+                "rgba(132, 99, 255, 0.2)",
+                "rgba(132, 99, 255, 0.2)",
+                "rgba(132, 99, 255, 0.2)"
+              ],
+              borderColor: [
+                "rgba(132, 99, 255, 1)",
+                "rgba(132, 99, 255, 1)",
+                "rgba(132, 99, 255, 1)",
+                "rgba(132, 99, 255, 1)",
+                "rgba(132, 99, 255, 1)",
+                "rgba(132, 99, 255, 1)"
+              ],
+              borderWidth: 1
+            }
+          ]
         },
-        {
-          id: 2,
-          language: "Node",
-          star: 3,
-          img: require("../../assets/skill/nodejs.svg")
-        },
-        {
-          id: 3,
-          language: "Django",
-          star: 3,
-          img: require("../../assets/skill/django.svg")
-        },
-        {
-          id: 4,
-          language: "Nuxt",
-          star: 3,
-          img: require("@/assets/skill/nuxt.svg")
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scale: {
+            ticks: {
+              suggestedMax: 5,
+              suggestedMin: 0,
+              stepSize: 1
+            }
+          }
         }
-      ],
-      infraSkills: [
-        {
-          id: 1,
-          language: "AWS",
-          star: 3,
-          img: require("../../assets/skill/aws.svg")
-        },
-        {
-          id: 2,
-          language: "Docker",
-          star: 3,
-          img: require("../../assets/skill/docker.svg")
-        }
-      ],
-      databaseSkills: [
-        {
-          id: 1,
-          language: "SQL Server",
-          star: 3,
-          img: require("../../assets/skill/microsoft-sql.svg")
-        },
-        {
-          id: 2,
-          language: "MySQL",
-          star: 3,
-          img: require("../../assets/skill/mysql.svg")
-        }
-      ],
-      otherSkills: [
-        {
-          id: 1,
-          language: "XD",
-          star: 2,
-          img: require("../../assets/skill/adobe-xd.svg")
-        },
-        {
-          id: 2,
-          language: "VScode",
-          star: 2,
-          img: require("../../assets/skill/vscode.svg")
-        }
-      ]
+      }
     };
-  }
+  },
+  mounted() {},
+  methods: {}
 };
 </script>
 

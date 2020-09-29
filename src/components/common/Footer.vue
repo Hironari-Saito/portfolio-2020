@@ -1,7 +1,6 @@
 <template>
   <v-footer>
-    <v-spacer></v-spacer>
-    <div>&copy; {{ new Date().getFullYear() }}</div>
+    <p class="footer">&copy; {{ new Date().getFullYear() }} Hironari Saito</p>
   </v-footer>
 </template>
 
@@ -12,8 +11,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-* {
-  margin: 0;
-  padding: 0;
+.footer {
+  margin: 0 auto;
 }
 </style>
