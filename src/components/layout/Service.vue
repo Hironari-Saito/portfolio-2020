@@ -13,7 +13,6 @@
             cols="12"
             sm="12"
             md="4"
-            data-delay="0.3"
             tag="li"
           >
             <div class="section-service__icon-bg blue lighten-4">
@@ -37,7 +36,6 @@
             cols="12"
             sm="12"
             md="4"
-            data-delay="0.3"
             tag="li"
           >
             <div class="section-service__icon-bg blue lighten-4">
@@ -62,7 +60,6 @@
             cols="12"
             sm="12"
             md="4"
-            data-delay="0.3"
             tag="li"
           >
             <div class="section-service__icon-bg blue lighten-4">
@@ -169,8 +166,14 @@ export default {
 .slideInUp {
   opacity: 0;
   visibility: hidden;
-  transition: 1s;
+  // transition: 1s;
   transform: translateY(30px);
+
+  @for $i from 1 through 3 {
+    &:nth-child(#{$i}) {
+      transition: (0.6s + 0.4s * $i);
+    }
+  }
 
   &.active {
     opacity: 1;

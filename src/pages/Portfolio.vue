@@ -18,7 +18,7 @@ import AppFooter from "@/components/common/Footer";
 import Hero from "@/components/layout/Hero";
 import Message from "@/components/layout/Message";
 import Service from "@/components/layout/Service";
-import Timeline from "@/components/Timeline";
+import Timeline from "@/components/layout/Timeline";
 import Skills from "@/components/layout/Skills";
 import ContactForm from "@/components/layout/ContactForm";
 

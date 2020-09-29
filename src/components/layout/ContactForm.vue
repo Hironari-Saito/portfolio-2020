@@ -1,10 +1,11 @@
 <template>
   <div id="app">
-    <v-app id="inspire">
+    <v-app id="inspire" class="pt-10 px-6">
       <v-container>
         <h2 class="text-center display-3 mb-5">Contact</h2>
         <p class="mb-10 text-center">
-          お仕事の相談についてはここで
+          お仕事の依頼・相談はこちらのフォームからお願いいたします。
+          2日以内で返信致します。
         </p>
       </v-container>
       <v-form ref="form" v-model="valid">
