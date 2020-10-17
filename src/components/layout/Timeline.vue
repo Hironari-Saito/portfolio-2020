@@ -187,7 +187,7 @@ export default {
     this.addActiveClass(0);
 
     // 背景をタイムラインにある要素の一番目をあらかじめbackgroundに設定する
-    this.changeBackgroundImg(0);
+    // this.changeBackgroundImg(0);
   }
 };
 </script>
@@ -203,7 +203,7 @@ export default {
     font-weight: normal;
     transition: 0.3s ease 0s;
     padding: 40px 0 80px;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.2);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
