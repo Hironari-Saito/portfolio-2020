@@ -1,7 +1,11 @@
 <template>
   <div class="timeline-item" v-bind:data-text="tlText">
     <div class="timeline__content">
-      <img class="timeline__img" v-bind:src="href" />
+      <img
+        class="timeline__img"
+        v-lazy="href"
+        :data-srcset="`${mobile} 400w, ${href} 800w `"
+      />
       <h4 class="timeline__content-title">{{ title }}</h4>
       <p class="timeline__content-desc">{{ desc }}</p>
     </div>
@@ -9,11 +13,17 @@
 </template>
 
 <script>
+import Vue from "vue";
+import VueLazyload from "vue-lazyload";
+
+Vue.use(VueLazyload);
+
 export default {
   name: "Event",
   props: {
     tlText: String,
     href: String,
+    mobile: String,
     title: String,
     desc: String
   }

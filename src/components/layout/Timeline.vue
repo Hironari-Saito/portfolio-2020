@@ -12,6 +12,7 @@
             :key="e.id"
             :tlText="e.timeline"
             :href="e.href"
+            :mobile="e.mobile"
             :title="e.title"
             :desc="e.desc"
           ></event>
@@ -23,6 +24,7 @@
 
 <script>
 import Event from "../Event.vue";
+
 export default {
   name: "Timeline",
   components: {
@@ -35,6 +37,7 @@ export default {
           id: 1,
           timeline: "Graduation",
           href: require("../../assets/images/timeline/graduation.jpg"),
+          mobile: require("../../assets/images/timeline/graduation@mobile.jpg"),
           title: "2017",
           desc: `富山大学を卒業しました。教育心理を専攻しておりました。卒業論文のテーマで実験用プログラムを作ったきっかけからエンジニアになることを決意しました。心理学を学んだことは、お客様に対する傾聴やホスピタリティに活かされていると感じております。`
         },
@@ -42,6 +45,7 @@ export default {
           id: 2,
           timeline: "An engineer in small Company",
           href: require("../../assets/images/timeline/engineer.jpg"),
+          mobile: require("../../assets/images/timeline/engineer@mobile.jpg"),
           title: "2017-2019 Sep",
           desc: `中小企業でシステムエンジニアとして働いておりました。旅行会社の基幹システムを基本設計から詳細設計、実装、テスト、リリースまでを担当しておりました。ここではJava, HTML/CSS, JavaScript, SQLServerの基本的なスキルセットが磨かれたと自負しております。また、ここで「報告・連絡・相談」の大切さを実感し、常に心がけるようにしております。`
         },
@@ -49,6 +53,7 @@ export default {
           id: 3,
           timeline: "Make Portfolio 2019",
           href: require("../../assets/images/timeline/my-portfolio-2019.jpg"),
+          mobile: require("../../assets/images/timeline/my-portfolio-2019@mobile.jpg"),
           title: "2019 Nov",
           desc: `2019年にポートフォリオサイトを作成しました。基本的なVueの使い方やVuetifyを用いています。`
         },
@@ -56,6 +61,7 @@ export default {
           id: 4,
           timeline: "Become Freelance",
           href: require("../../assets/images/timeline/freelance.jpg"),
+          mobile: require("../../assets/images/timeline/freelance@mobile.jpg"),
           title: "2019-2020 Sep",
           desc: `フリーランスとして活動し始めました。システムエンジニア として臨床検査の基幹システムを基本設計、詳細設計を担当しておりました。設計ではAPIの設計とフロントエンドの設計書を作成しておりました。また、発番サーバーを作成するためにSpringでモックアップで確認作業も行なっています。`
         },
@@ -63,6 +69,7 @@ export default {
           id: 5,
           timeline: "Make Portfolio 2020",
           href: require("../../assets/images/timeline/my-portfolio-2020.jpg"),
+          mobile: require("../../assets/images/timeline/my-portfolio-2020@mobile.jpg"),
           title: "2020 Nov",
           desc: `2019年に作成したポートフォリオをより伝わるように作り直しました。`
         }

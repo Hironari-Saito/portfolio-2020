@@ -7,7 +7,9 @@
             class="section-top__image"
             v-for="(image, index) in images"
             :key="index"
-            :style="{ 'background-image': 'url(' + image + ')' }"
+            :style="{
+              'background-image': 'url(' + image + ')'
+            }"
           ></div>
         </div>
         <div class="section-top__message">
@@ -29,6 +31,9 @@ export default {
   data: () => {
     return {
       images: [
+        require("../../assets/images/hero/main-1.jpg"),
+        require("../../assets/images/hero/main-2.jpg"),
+        require("../../assets/images/hero/main-3.jpg"),
         require("../../assets/images/hero/main-1.jpg"),
         require("../../assets/images/hero/main-2.jpg"),
         require("../../assets/images/hero/main-3.jpg")
