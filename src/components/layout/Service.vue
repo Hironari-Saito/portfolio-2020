@@ -1,9 +1,9 @@
 <template>
   <v-app id="app-service">
     <section id="service" class="section-service pt-10">
-      <v-container class="px-6">
-        <h2 class="text-center display-3 mb-5">Service</h2>
-        <p class="mb-10">
+      <v-container class="px-6 pt-0">
+        <h2 class="text-center display-3">Service</h2>
+        <p class="text-center mb-10">
           デザインからHTML、CSS、JavaScrpt コーディングまで。
           ウェブサイト制作全般に対応いたします。
         </p>
@@ -28,7 +28,7 @@
             <p class="section-service__subtitle">ウェブ制作全般</p>
             <p class="mb-0">
               ランディングページやホームページの企画から制作、運営サポートまで、お気軽にご相談ください。
-              ある特定の工程の作業をご依頼のお客様も大歓迎です。
+              ある特定の工程の作業をご依頼のお客様も大歓迎しております。
             </p>
           </v-col>
           <v-col
@@ -52,7 +52,7 @@
             <p class="section-service__subtitle">設計・デザイン</p>
             <p class="mb-0">
               個人ブログやニュースサイトなどの更新が発生するサイトはWordPressをお勧めしております。
-              お客様のご要望に応じて柔軟に設計を提案いたします。
+              お客様のご要望に応じて柔軟に設計を提案いたします。サイト設置後はケアプランを用意しております。
             </p>
           </v-col>
           <v-col
@@ -75,7 +75,7 @@
             <p class="section-service__subtitle">コーディング</p>
             <p class="mb-0">
               レスポンシブ対応はもちろんのこと、迅速かつ丁寧なコーディングを致します。
-              連絡を密に行うことにより、修正対応を早く行うことで納期を短縮できるように心掛けしております。
+              連絡を密に行うことにより、修正対応を早く行うことでより高品質なコードをお届けできるように努めております。
             </p>
           </v-col>
         </v-row>
@@ -133,6 +133,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 .section-service {
+  h2 {
+    margin-bottom: 20px;
+  }
   &__service {
     text-align: center;
     list-style: none;
@@ -150,6 +153,7 @@ export default {
     height: 150px;
     border-radius: 50%;
     position: relative;
+    filter: grayscale(65%);
   }
   &__icon {
     position: absolute;
@@ -163,6 +167,18 @@ export default {
   }
 }
 
+@media only screen and (min-width: 960px) {
+  .section-service {
+    h2 {
+      margin-bottom: 40px;
+    }
+    &__service-list {
+      // margin-top: 20vh;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+}
 .slideInUp {
   opacity: 0;
   visibility: hidden;
@@ -172,6 +188,7 @@ export default {
   @for $i from 1 through 3 {
     &:nth-child(#{$i}) {
       transition: (0.6s + 0.4s * $i);
+      transition-property: opacity, transform;
     }
   }
 

@@ -35,7 +35,7 @@ export default {
   },
   data: () => {
     return {
-      heroImg: require("../assets/images/hero/logo.png"),
+      heroImg: require("../assets/images/hero/logo.svg"),
       scrollY: 0
     };
   },
@@ -52,4 +52,4 @@ export default {
   }
 };
 </script>
-<style scoped lang="scss"></style>
+<style lang="scss" src="@/assets/sass/global.scss"></style>

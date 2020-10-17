@@ -13,7 +13,7 @@
         <div class="section-top__message">
           <img class="section-top__logo" :src="logo" alt="logo" />
           <h1>HIRONARI SAITO</h1>
-          <h2>人生は出逢いだ。</h2>
+          <h2>一つ一つの出逢いを大切に</h2>
         </div>
       </div>
     </section>
@@ -42,6 +42,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "@/assets/sass/_variables.scss";
+
 .section-top {
   &__carousel {
     height: 100vh;
@@ -53,7 +55,7 @@ export default {
     opacity: 0.75;
     width: 100%;
     height: 100%;
-    z-index: 500;
+    filter: grayscale(65%);
   }
 
   // イメージ画像の数をここで定義している
@@ -91,11 +93,32 @@ export default {
 
   &__logo {
     height: auto;
+    max-width: 100px;
     width: 20vw;
   }
+
+  $shadow: 0.5px 0.5px 1px rgba(255, 255, 255, 0.3);
   h1 {
+    color: $accent-color;
     font-size: 36px;
     margin-bottom: 100px;
+    text-shadow: $shadow;
+  }
+
+  h2 {
+    text-shadow: $shadow;
+    font-family: $noto-sans-font;
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 32px;
+    font-weight: 700;
   }
 }
 

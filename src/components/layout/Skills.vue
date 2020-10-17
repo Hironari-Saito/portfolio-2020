@@ -62,7 +62,7 @@
         <v-list class="pl-0" tag="ol" two-line>
           <v-list-item tag="li">
             <v-list-item-content>
-              <v-list-item-title
+              <v-list-item-title wrap
                 >Linux Professional Institute Certification level
                 2</v-list-item-title
               >
@@ -72,7 +72,7 @@
 
           <v-list-item tag="li">
             <v-list-item-content>
-              <v-list-item-title
+              <v-list-item-title wrap
                 >HTML5 Professional Certification Level 2</v-list-item-title
               >
               <v-list-item-subtitle>2020/2</v-list-item-subtitle>
@@ -81,7 +81,7 @@
 
           <v-list-item tag="li">
             <v-list-item-content>
-              <v-list-item-title
+              <v-list-item-title wrap
                 >Cisco Certified Network Professional Routing &amp;
                 Switchings</v-list-item-title
               >
@@ -91,14 +91,16 @@
 
           <v-list-item tag="li">
             <v-list-item-content>
-              <v-list-item-title>Java SE 8 Programmer Gold</v-list-item-title>
+              <v-list-item-title wrap
+                >Java SE 8 Programmer Gold</v-list-item-title
+              >
               <v-list-item-subtitle>2017/8</v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
 
           <v-list-item tag="li">
             <v-list-item-content>
-              <v-list-item-title>応用情報技術者試験</v-list-item-title>
+              <v-list-item-title wrap>応用情報技術者試験</v-list-item-title>
               <v-list-item-subtitle>2014/11</v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>

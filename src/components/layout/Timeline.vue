@@ -62,7 +62,7 @@ export default {
         {
           id: 5,
           timeline: "Make Portfolio 2020",
-          href: require("../../assets/images/timeline/my-portfolio-2019.jpg"),
+          href: require("../../assets/images/timeline/my-portfolio-2020.jpg"),
           title: "2020 Nov",
           desc: `2019年に作成したポートフォリオをより伝わるように作り直しました。`
         }
