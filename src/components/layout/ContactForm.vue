@@ -15,8 +15,8 @@
               <v-text-field
                 v-model="firstname"
                 :rules="nameRules"
-                :counter="10"
-                label="First name"
+                :counter="20"
+                label="性"
                 required
               ></v-text-field>
             </v-col>
@@ -25,8 +25,8 @@
               <v-text-field
                 v-model="lastname"
                 :rules="nameRules"
-                :counter="10"
-                label="Last name"
+                :counter="20"
+                label="名"
                 required
               ></v-text-field>
             </v-col>
@@ -43,8 +43,11 @@
               <v-textarea
                 v-model="contents"
                 auto-grow
-                label="Say Hi"
+                label="お問い合わせ内容"
               ></v-textarea>
+            </v-col>
+            <v-col class="text-center" cols="12">
+              <div id="recaptcha-v2-container"></div>
             </v-col>
             <v-col class="text-center" cols="12">
               <div class="my-2">
@@ -61,6 +64,7 @@
           </v-row>
         </v-container>
       </v-form>
+
       <v-snackbar
         v-model="snackBar.show"
         :color="snackBar.color"
@@ -73,9 +77,14 @@
     </v-app>
   </div>
 </template>
-
+<script
+  src="https://www.google.com/recaptcha/api.js?render=explicit"
+  defer
+></script>
 <script>
 import { functions } from "@/plugins/firebase";
+import { load } from "recaptcha-v3";
+
 export default {
   name: "ContactForm",
   data: () => ({
@@ -83,14 +92,14 @@ export default {
     firstname: "",
     lastname: "",
     nameRules: [
-      v => !!v || "Name is required",
-      v => (v && v.length <= 10) || "Name must be less than 10 characters"
+      v => !!v || "お名前は必須入力です。",
+      v => (v && v.length <= 20) || "20文字以内でご記入お願いいたします。"
     ],
     loading: false,
     email: "",
     emailRules: [
-      v => !!v || "E-mail is required",
-      v => /.+@.+/.test(v) || "E-mail must be valid"
+      v => !!v || "メールアドレスは必須入力です。",
+      v => /.+@.+/.test(v) || "メールアドレスの形式に誤りがあります。"
     ],
     contents: "",
     snackBar: {
@@ -102,25 +111,48 @@ export default {
   methods: {
     sendMail: function() {
       if (this.$refs.form.validate()) {
+        // mail send
         this.loading = true;
         const mailer = functions.httpsCallable("sendMail");
         const contactForm = {
-          name: `${this.firstname} ${this.lastname}`,
+          name: `${this.lastname} ${this.firstname}`,
           email: this.email,
           contents: this.contents
         };
 
         mailer(contactForm)
           .then(() => {
+            this.sendRecaptcha3();
+
             this.formReset();
-            this.showSnackBar("success", "Thank you for your comment!");
+            this.showSnackBar(
+              "success",
+              "お問い合わせいただきありがとうございます。返信までしばらくお待ちください。"
+            );
           })
           .catch(() => {
-            this.showSnackBar("error", "Sorry, something wrong... can't send");
+            this.showSnackBar(
+              "error",
+              "エラーが発生いたしました。申し訳ございませんが、時間をおいて再度お問い合わせください。"
+            );
           })
           .finally(() => {
             this.loading = false;
           });
+      }
+    },
+    sendRecaptcha3: function() {
+      // recaptcha v3
+      // サイトキーをロードする
+      const recaptcha = load("6LdvVNgZAAAAAN7u0Fh3Fq6fJIe2RQyJHzmRB7NZ");
+      const token = recaptcha.execute("call recaptcha v3");
+      const func = functions("asia-northeast1").httpsCallable("callRecaptcha3");
+      const response = func({ token: token }).then(async response => {
+        return response.data;
+      });
+
+      if (response.success === false) {
+        throw new Error(`Recaptcha error: ${response["error-codes"]}`);
       }
     },
     showSnackBar: function(color, message) {
