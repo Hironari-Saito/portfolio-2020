@@ -4,6 +4,7 @@
       <img
         class="timeline__img"
         v-lazy="href"
+        :alt="tlText"
         :data-srcset="`${mobile} 400w, ${href} 800w `"
       />
       <h4 class="timeline__content-title">{{ title }}</h4>
