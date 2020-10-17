@@ -47,9 +47,6 @@
               ></v-textarea>
             </v-col>
             <v-col class="text-center" cols="12">
-              <div id="recaptcha-v2-container"></div>
-            </v-col>
-            <v-col class="text-center" cols="12">
               <div class="my-2">
                 <v-btn
                   @click="sendMail()"
@@ -77,10 +74,6 @@
     </v-app>
   </div>
 </template>
-<script
-  src="https://www.google.com/recaptcha/api.js?render=explicit"
-  defer
-></script>
 <script>
 import { functions } from "@/plugins/firebase";
 import { load } from "recaptcha-v3";
@@ -141,13 +134,13 @@ export default {
           });
       }
     },
-    sendRecaptcha3: function() {
+    sendRecaptcha3: async function() {
       // recaptcha v3
       // サイトキーをロードする
-      const recaptcha = load("6LdvVNgZAAAAAN7u0Fh3Fq6fJIe2RQyJHzmRB7NZ");
-      const token = recaptcha.execute("call recaptcha v3");
-      const func = functions("asia-northeast1").httpsCallable("callRecaptcha3");
-      const response = func({ token: token }).then(async response => {
+      const recaptcha = await load("6LdvVNgZAAAAAN7u0Fh3Fq6fJIe2RQyJHzmRB7NZ");
+      const token = await recaptcha.execute("homepage");
+      const func = functions.httpsCallable("callRecaptcha3");
+      const response = await func({ token: token }).then(async response => {
         return response.data;
       });
 
