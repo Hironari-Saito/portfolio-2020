@@ -31,10 +31,7 @@ export default {
       images: [
         require("../../assets/images/hero/main-1.jpg"),
         require("../../assets/images/hero/main-2.jpg"),
-        require("../../assets/images/hero/main-3.jpg"),
-        require("../../assets/images/hero/main-4.jpg"),
-        require("../../assets/images/hero/main-5.jpg"),
-        require("../../assets/images/hero/main-6.jpg")
+        require("../../assets/images/hero/main-3.jpg")
       ]
     };
   }
